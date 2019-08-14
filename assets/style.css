@@ -4,7 +4,19 @@
     
 }
 
+.display-4{
+  font-family: 'Racing Sans One', cursive;
+  color: goldenrod;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: white;
+  font-size: 200px;
+  margin-bottom: -20px;
+  letter-spacing: -5px;
+}
 
+.lead{
+  color: white;
+}
 
 .sidenav {
     height: 100%;
@@ -55,3 +67,14 @@
   h1, p{
       text-align: center;
   }
+
+
+  body{
+    height:100%;
+    align-items: center;
+    background-image: url("images/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+

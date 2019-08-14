@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/style.css">
-        
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Racing+Sans+One&display=swap" rel="stylesheet">
+
     </head>
 
-    <body background="assets/images/background.jpg">
+    <body>
         
         <div class="container-fluid">
                 <div id="rightMenu">
                     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
                 </div>
     
-                <h1 class="display-4">Geoca$h</h1>
+                <h1 class="display-4">GEOCA$H</h1>
                 <p class="lead">Helps you decide if it is a good move or not</p>
                 <div id="mySidenav" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -26,38 +30,73 @@
                   
             </div>
                 
-            <div class="container-fluid text-center" >
-                <!-- <div class="row parent"> -->
-                    <!-- <div row="col-md-3 text-center rounded" id="firstDisplay"> -->
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Select City
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">City 1</a>
-                                <a class="dropdown-item" href="#">City 2</a>
-                                <a class="dropdown-item" href="#">City 3</a>
-                            </div>
+            <div class="container text-center" >
+
+                    <div class="form-group">
+                            <label for="exampleFormControlSelect1">Field:</label>
+                            <select class="form-control" id="articleCount">
+                                <option>All</option>
+                                <option>Full Stack</option>
+                                <option>Data</option>
+                                <option>Web</option>
+                                <option>Mobile</option>
+                            </select>
                         </div>
+
+                
+            </div>
+           
+            <div class="container">
+                    <!-- 2 columns card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Search Results</h5>
+                        </div>
+                        <div class="card-block">
+                            <div class="row">
+                                <div class="col-lg-6 tags p-b-2">
+                                        <table class="table table-hover">
+                                                <thead>
+                                                  <tr>
+                                                    <th scope="col" id="jobTitle">Title</th>
+                                                    <th scope="col" id="location" i>Location</th>
+                                                    
+                                                  </tr>
+                                                </thead>
+                                                <tbody>
+                                                  <tr>
+                                                   
+                                                    <td>Full-Stack Developer</td>
+                                                    <td>Raleigh</td>
+                                                    
+                                                  </tr>
+                                                  <tr>
+                                                    
+                                                    <td>UX Designer</td>
+                                                    <td>Durham</td>
+                                                    
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                </div>
+                                <div class="col-lg-4 offset-lg-1">
+                                 
+                                            
+                                            <div>MAPS HERE</div>
+                                    </div>
+
     
                         <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Select Job Tittle
+                                Select Job Title
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Job Tittle 1</a>
-                                    <a class="dropdown-item" href="#">Job Tittle 2</a>
-                                    <a class="dropdown-item" href="#">Job Tittle 2</a>
+                                    <a class="dropdown-item" href="#">Job Title 1</a>
+                                    <a class="dropdown-item" href="#">Job Title 2</a>
+                                    <a class="dropdown-item" href="#">Job Title 2</a>
                                 </div>
                             </div>
-                            <button class="btn btn-secondary" type="button" id="testing">testing test test</button>
-                            <div id="map"></div>
 
-                    <!-- </div> -->
-                <!-- </div> -->
-            </div>
-              
-    
               
         
     <script type="text/javascript" src="assets/geocash.js"></script>

@@ -1,5 +1,28 @@
+
 var funky = "AIzaSyDm478V9Zs2wCwgw,klsahdgldsaigh"
 var fresh = "asjkdhfkladshf;QgxxokXaMs36PEFvYM"
+
+
+//menu first page -open
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+  }
+ 
+//menu first page -close
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+  }
+
+// Field menu begin
+
+
+// Field menu end
+
+  
 var searchInput = "developer"
 var locationInput = ""
 var address = []
@@ -92,7 +115,3 @@ results()
 // this.on("click", function()){
 //     address = jobSearch[0].location[0]
 // }
-
-
-
-
