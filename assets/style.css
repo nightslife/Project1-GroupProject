@@ -67,3 +67,14 @@
   h1, p{
       text-align: center;
   }
+
+
+  body{
+    height:100%;
+    align-items: center;
+    background-image: url("images/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
