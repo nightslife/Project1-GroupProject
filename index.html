@@ -4,11 +4,11 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/style.css">
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Racing+Sans+One&display=swap" rel="stylesheet">
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
 
     <body>
@@ -31,9 +31,10 @@
             </div>
                 
             <div class="container text-center" >
-
-                    <div class="form-group">
-                            <label for="exampleFormControlSelect1">Field:</label>
+                <div class="row">
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1"></label>
                             <select class="form-control" id="articleCount">
                                 <option>All</option>
                                 <option>Full Stack</option>
@@ -42,11 +43,15 @@
                                 <option>Mobile</option>
                             </select>
                         </div>
+                    </div>
+                    <div class="col-md">
+                        <input id="searchBtn" class="btn btn-secondary btn-lg btn-block" type="submit" value="Search">
+                    </div>
 
-                
+                </div>
             </div>
            
-            <div class="container">
+            <div id="searchResults" class="container">
                     <!-- 2 columns card -->
                     <div class="card">
                         <div class="card-header">
@@ -85,17 +90,7 @@
                                             <div>MAPS HERE</div>
                                     </div>
 
-    
-                        <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Select Job Title
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Job Title 1</a>
-                                    <a class="dropdown-item" href="#">Job Title 2</a>
-                                    <a class="dropdown-item" href="#">Job Title 2</a>
-                                </div>
-                            </div>
+                         
                         </div>
                         <!--/card-block-->
                     </div>

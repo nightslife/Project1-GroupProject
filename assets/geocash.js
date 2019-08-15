@@ -1,3 +1,4 @@
+$(document).ready(function(){
 
 //menu first page -open
 function openNav() {
@@ -45,3 +46,21 @@ $.ajax({
 // this.on("click", function()){
 //     address = jobSearch[0].location[0]
 // }
+
+function searchResultsHide() {
+  var x = document.getElementById("searchResults");
+  x.style.display = "none";
+}
+
+searchResultsHide();
+
+function searchResultsShow() {
+  var x = document.getElementById("searchResults");
+  x.style.display = "block";
+}
+
+$("#searchBtn").on("click",(searchResultsShow))
+
+
+// final
+});
