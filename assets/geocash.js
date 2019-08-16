@@ -14,12 +14,6 @@ function closeNav() {
     document.body.style.backgroundColor = "white";
   }
 
-// Field menu begin
-
-
-// Field menu end
-
-  
 var searchInput = "developer"
 var locationInput = ""
 var address = []
@@ -43,10 +37,7 @@ $.ajax({
 })
 })
 
-// this.on("click", function()){
-//     address = jobSearch[0].location[0]
-// }
-
+// Hide results screen
 function searchResultsHide() {
   var x = document.getElementById("searchResults");
   x.style.display = "none";
@@ -54,13 +45,20 @@ function searchResultsHide() {
 
 searchResultsHide();
 
+// Show result screen after click search
 function searchResultsShow() {
   var x = document.getElementById("searchResults");
   x.style.display = "block";
 }
 
+$("#searchBtn").on("click",(searchResultsShow));
+
 $("#searchBtn").on("click",(searchResultsShow))
 
+$("#row1").on("click",function(){
+  console.log("clicked")
+  $("#modal").modal("show");
+});
 
 // final
 });
