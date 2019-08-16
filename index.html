@@ -7,6 +7,9 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Racing+Sans+One&display=swap" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
     </head>
 
     <body>
@@ -30,15 +33,16 @@
                 
             <div class="container text-center" >
                 <div class="row">
+                    <!-- 2 columns: one for menu, one for search -->
                     <div class="col-md">
                         <div class="form-group">
                             <label for="exampleFormControlSelect1"></label>
                             <select class="form-control" id="articleCount">
-                                <option>All</option>
-                                <option>Full Stack</option>
-                                <option>Data</option>
-                                <option>Web</option>
-                                <option>Mobile</option>
+                                <option id = "all">All</option>
+                                <option id = "fullStack">Full Stack</option>
+                                <option id = "data">Data</option>
+                                <option id = "web">Web</option>
+                                <option id = "mobile">Mobile</option>
                             </select>
                         </div>
                     </div>
@@ -57,36 +61,38 @@
                         </div>
                         <div class="card-block">
                             <div class="row">
-                                <div class="col-lg-6 tags p-b-2">
+                                <div class="col-lg-12 tags p-b-2">
                                         <table class="table table-hover">
                                                 <thead>
                                                   <tr>
                                                     <th scope="col" id="jobTitle">Title</th>
                                                     <th scope="col" id="location" i>Location</th>
+                                                    <th scope="col" id="location" i>Company</th>
+                                                    <th scope="col" id="location" i>Description</th>
                                                     
                                                   </tr>
                                                 </thead>
                                                 <tbody>
-                                                  <tr>
+                                                  <tr id = row1>
                                                    
                                                     <td>Full-Stack Developer</td>
                                                     <td>Raleigh</td>
+                                                    <td>XYZ</td>
+                                                    <td>to do things</td>
+
                                                     
                                                   </tr>
-                                                  <tr>
+                                                  <tr id = row2>
                                                     
                                                     <td>UX Designer</td>
                                                     <td>Durham</td>
+                                                    <td>XYZ</td>
+                                                    <td>to do things</td>
                                                     
                                                   </tr>
                                                 </tbody>
                                               </table>
                                 </div>
-                                <div class="col-lg-4 offset-lg-1" id="maps">
-                                 
-                                            
-                                            <div>MAPS HERE</div>
-                                    </div>
 
 
                          
@@ -97,12 +103,42 @@
                 </div>
 
 
+<!-- Modal -->
+<div id = "modal" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Job Tittle goes here</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+        the job description goes here
+        </div>
+        <div class="container">
+            Map goes here
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+    </div>
+  </div>
+</div>        
+=======
+
+
                             <button class="btn btn-secondary" type="button" id="test">
                               Test
                               </button>      
                               <button class="btn btn-secondary" type="button" id="test2">
                                 Test2
                                 </button>      
+
         
     <script type="text/javascript" src="assets/geocash.js"></script>
     <script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDm478V9Zs2wCwgwQgxxokXaMs36PEFvYM&callback=initMap" async defer></script>
