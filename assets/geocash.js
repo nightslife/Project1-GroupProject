@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+
   var funky = "AIzaSyDm478V9Zs2wCwgw,klsahdgldsaigh"
   var fresh = "asjkdhfkladshf;QgxxokXaMs36PEFvYM"
   var latLong = ""
@@ -157,6 +158,7 @@ $(document).ready(function(){
         newDescription.text(jobResponse[i].description)
         newRow.append(newTitle, newCompany, newLocation, newDescription)
         $("#output").append(newRow)
+
 }
   }
 
@@ -167,6 +169,93 @@ $(document).ready(function(){
     console.log("clicked")
     $("#modal").modal("show");
   });
-  
-  // final
-  });
+
+}
+function panTo(x,y){
+  map.panTo({
+    lat: x,
+    lng: y
+ })
+}
+$("#test").on("click", function(){
+  console.log("moving")
+  panTo()
+})
+
+
+// on(submitclick){
+//   ajaxQuery().then({
+//       do{for(job of Results){
+//           let newRow = $("<tr>")
+//           var newTitle = newCompany = newLocation = newDescription = newURL = $("<td>")
+//           newTitle.text(job.title)
+//           newCompany.text(job.company)
+//           newLocation.text(job.location)
+//           newDescription.text(job.description)
+//           newURL.text(job.company_url)
+//           newRow.append()
+//           i++
+          
+//       }}
+//       while(i<10)
+//   })
+// }
+results()
+
+
+
+
+// $.ajax({})
+// .then(function(response1) {
+
+//     return(response1);
+
+// })
+// .then(function(response2) {
+
+//     console.log(response2)
+//     return $.ajax({});
+
+// })
+// .then(function(response3) {
+
+
+
+// })
+// .catch(function(error) {
+//     console.log(error);
+// })
+
+// var promise = new Promise(function(resolve, reject) {
+//     results()
+//     if (resultComplete) {
+//       resolve("Stuff worked!");
+//     }
+//     else {
+//       reject(Error("It broke"));
+//     }
+//   });
+
+
+
+
+// this.on("click", function()){
+//     address = jobSearch[0].location[0]
+// }
+
+$("#searchResults").hide();
+
+$("#searchBtn").on("click",function(){
+  $("#searchResults").show();
+});
+
+$("#row1").on("click",function(){
+  console.log("clicked")
+  $("#modal").modal("show");
+});
+
+
+// final
+});
+
+
