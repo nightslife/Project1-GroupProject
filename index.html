@@ -1,20 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <head>
+    <!-- Favicon link -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <!-- Google apis and ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Racing+Sans+One&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <!-- Spectre Links -->
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <!-- Bootstrap Links -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Background style sheet -->
+    <link rel="stylesheet" href="assets/style.css">
 
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css?family=Racing+Sans+One&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="assets/style.css">                
-
-    </head>
+</head>
 
     <body>
         
         <div class="container-fluid">
-                <div id="rightMenu">
-                    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
-                </div>
+              
+<!-- nav bar  -->
+
+<!-- basic dropdown button -->
+<div class="dropdown" > 
+  <a href="#" class="btn btn-link dropdown-toggle text-light" tabindex="0">
+   Menu <i class="dd-icon"></i>
+  </a>
+  <!-- menu component -->
+  <ul class="menu bg-gray">
+    <li class="menu-item">
+      <a href="#">
+        <i class=" icon-link"></i> Home
+      </a>
+      <a href="#">
+          <i class=" icon-link"></i>Profile
+        </a>
+        <a href="#">
+            <i class="  icon-link"></i>About
+          </a>
+    </li>
+
+  </ul>
+</div>
+
+<!-- Logo -->
+
     
                 <h1 class="display-4">
                     <span style="color:goldenrod">G</span>
@@ -26,13 +60,6 @@
                     <span style="color:goldenrod">H</span>
                 </h1>
                 <p class="lead">Helps you decide if it is a good move or not</p>
-                <div id="mySidenav" class="sidenav">
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <a href="#">Home</a>
-                    <a href="#">Saved</a>
-                    <a href="#">My Profile</a>
-                    <a href="#">About</a>
-                </div>
                   
             </div>
                 
@@ -57,7 +84,7 @@
 
                 </div>
             </div>
-           
+           <!-- Search results -->
             <div id="searchResults" class="container">
                     <!-- 2 columns card -->
                     <div class="card">
@@ -144,11 +171,10 @@
                                 Test2
                                 </button>      
 
-        
+        <!--Google apis and javascript link  -->
     <script type="text/javascript" src="assets/geocash.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    
     <script src = "https://maps.googleapis.com/maps/api/js?key=APIKEYNOTHERE&callback=initMap" async defer></script>
     <script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDm478V9Zs2wCwgwQgxxokXaMs36PEFvYM&callback=initMap" async defer></script>
 
