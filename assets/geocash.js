@@ -4,19 +4,6 @@ var funky = "AIzaSyDm478V9Zs2wCwgw,klsahdgldsaigh"
 var fresh = "asjkdhfkladshf;QgxxokXaMs36PEFvYM"
 var latLong = ""
 
-//menu first page -open
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-  }
- 
-//menu first page -close
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-    document.body.style.backgroundColor = "white";
-  }
 
 var searchInput = "developer"
 var locationInput = ""
@@ -143,28 +130,17 @@ results()
 //     address = jobSearch[0].location[0]
 // }
 
+$("#searchResults").hide();
 
-function searchResultsHide() {
-  var x = document.getElementById("searchResults");
-  x.style.display = "none";
-}
-
-searchResultsHide();
-
-// Show result screen after click search
-function searchResultsShow() {
-  var x = document.getElementById("searchResults");
-  x.style.display = "block";
-}
-
-$("#searchBtn").on("click",(searchResultsShow));
-
-$("#searchBtn").on("click",(searchResultsShow))
+$("#searchBtn").on("click",function(){
+  $("#searchResults").show();
+});
 
 $("#row1").on("click",function(){
   console.log("clicked")
   $("#modal").modal("show");
 });
+
 
 // final
 });

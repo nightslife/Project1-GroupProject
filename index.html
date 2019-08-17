@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css?family=Racing+Sans+One&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="assets/style.css">                
-
-    </head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
+      <link href="https://fonts.googleapis.com/css?family=Racing+Sans+One&display=swap" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">               
+      <link rel="stylesheet" href="assets/style.css"> 
+  </head>
 
     <body>
         
@@ -72,8 +72,8 @@
                                                   <tr>
                                                     <th scope="col" id="jobTitle">Title</th>
                                                     <th scope="col" id="location" i>Location</th>
-                                                    <th scope="col" id="location" i>Company</th>
-                                                    <th scope="col" id="location" i>Description</th>
+                                                    <th scope="col" id="company" i>Company</th>
+                                                    <th scope="col" id="description" i>Description</th>
                                                     
                                                   </tr>
                                                 </thead>
@@ -109,22 +109,42 @@
 
 
 <!-- Modal -->
-<div id = "modal" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Job Tittle goes here</h5>
+    <div id = "modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel exampleModalScrollableTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">  
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 id="jobTitleModal"class="modal-title" >
+              Job Tittle: Job XYZ
+            </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div class="container">
-        the job description goes here
-        </div>
-        <div class="container">
-            Map goes here
-        </div>
+          
+            <div id = "locationModal">
+              Location: 
+              Raleigh
+            </div>
+            <br>
+
+            <div id = "companyModal">
+              Company Name: 
+              CompanyXYZ
+            </div>
+            <br>
+
+            <div id = "descriptionModal">
+              Description: 
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+      
+    </div>
+    <br>
+      <div class="container" >
+          <img id = "mapImage" class="rounded mx-auto d-block" src="assets/images/background.jpg" style="width:600px;height:400px;">
+      </div>
 
       </div>
 
@@ -147,8 +167,8 @@
         
     <script type="text/javascript" src="assets/geocash.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    
+    
     <script src = "https://maps.googleapis.com/maps/api/js?key=APIKEYNOTHERE&callback=initMap" async defer></script>
     <script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDm478V9Zs2wCwgwQgxxokXaMs36PEFvYM&callback=initMap" async defer></script>
 
