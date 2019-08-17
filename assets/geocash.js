@@ -173,7 +173,6 @@ $(document).ready(function(){
     $("#modal").modal("show");
   });
 
-}
 function panTo(x,y){
   map.panTo({
     lat: x,
