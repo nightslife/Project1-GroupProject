@@ -148,18 +148,22 @@ $(document).ready(function(){
   function makeResultsTable (jobResponse){
     for(let i = 0; i <=9 ; i++){
         var newRow = $("<tr>")
-        newRow.attr( "id", i + "element")
-        newRow.addClass() // add Class for CSS styling here)
+        newRow.attr("id", i + "element")
+        newRow.addClass("rowtoclick") // add Class for CSS styling here)
         newRow.attr("data-title", jobResponse[i].title)
         newRow.attr("data-company", jobResponse[i].company)
         newRow.attr("data-location", jobResponse[i].location)
         newRow.attr("data-description", jobResponse[i].description)
         newRow.attr("data-url", jobResponse[i].company_url)
         var newTitle = $("<td>").text(jobResponse[i].title)
-        var newCompany = $("<td>").text(jobResponse[i].company +"@"+ jobResponse[i].company_url)
+        var newCompany = $("<td>").text(jobResponse[i].company)
         var newLocation = $("<td>").text(jobResponse[i].location)
-        // var newDescription = $("<td>").html(jobResponse[i].description)
-        newRow.append(newTitle, newLocation, newCompany)
+        var thelink = $('<a>', {
+          text: "Company Info",
+          href: jobResponse[i].company_url,
+        })
+        var newURL = $("<td>").append(thelink)
+        newRow.append(newTitle, newLocation, newCompany, newURL)
         $("#output").append(newRow)
 
 }
@@ -168,10 +172,12 @@ $(document).ready(function(){
 
   $("#searchBtn").on("click",(searchResultsShow));
   
-  $("#row1").on("click",function(){
-    console.log("clicked")
-    $("#modal").modal("show");
-  });
+  // $("#row1").on("click",function(){
+  //   console.log("clicked")
+  //   $("#modal").modal("show");
+  // });
+
+
 
 function panTo(x,y){
   map.panTo({
@@ -179,6 +185,7 @@ function panTo(x,y){
     lng: y
  })
 }
+
 $("#test").on("click", function(){
   console.log("moving")
   panTo()
@@ -251,13 +258,18 @@ $("#searchBtn").on("click",function(){
   $("#searchResults").show();
 });
 
-$("#row1").on("click",function(){
+$(document).on("click", ".rowtoclick", function(){
+  console.log("thats a row")
+  $("#jobTitleModal").text($(this).attr("data-title"))
+  $("#locationModal").text($(this).attr("data-location"))
+  $("#companyModal").text($(this).attr("data-company"))
+  $("#descriptionModal").html($(this).attr("data-description"))
+  // $("#maps").text(this.attr("data-title"))
+
+
   console.log("clicked")
   $("#modal").modal("show");
 });
 
-
 // final
 });
-
-
