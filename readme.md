@@ -19,7 +19,7 @@ Submit a search. If you come across errors please reach out via the Contact opti
 * [VSCode](https://code.visualstudio.com/)
 * [HTML](https://en.wikipedia.org/wiki/HTML)
 * [Bootstrap CSS Framework] (https://getbootstrap.com/)
-* [Materialize CSS Framework] (https://materializecss.com/)
+* [Spectre CSS Framework] (https://picturepan2.github.io/spectre/)
 * [JavaScript](https://www.javascript.com/)
 * [jQuery](https://jquery.com/)
 
