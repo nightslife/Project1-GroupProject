@@ -147,16 +147,19 @@ $(document).ready(function(){
   
   function makeResultsTable (jobResponse){
     for(let i = 0; i <=9 ; i++){
-        let newRow = $("<tr>")
-        var newDescription = $("<td>")
-        var newTitle = newCompany = newLocation = newDescription
-        newDescription.addClass() // add Class for CSS styling here)
-        newDescription.attr( "id", i) // add id for CSS styling here)
-        newTitle.text(jobResponse[i].title)
-        newCompany.text(jobResponse[i].company +"@"+ jobResponse[i].company_url)
-        newLocation.text(jobResponse[i].location)
-        newDescription.text(jobResponse[i].description)
-        newRow.append(newTitle, newCompany, newLocation, newDescription)
+        var newRow = $("<tr>")
+        newRow.attr( "id", i + "element")
+        newRow.addClass() // add Class for CSS styling here)
+        newRow.attr("data-title", jobResponse[i].title)
+        newRow.attr("data-company", jobResponse[i].company)
+        newRow.attr("data-location", jobResponse[i].location)
+        newRow.attr("data-description", jobResponse[i].description)
+        newRow.attr("data-url", jobResponse[i].company_url)
+        var newTitle = $("<td>").text(jobResponse[i].title)
+        var newCompany = $("<td>").text(jobResponse[i].company +"@"+ jobResponse[i].company_url)
+        var newLocation = $("<td>").text(jobResponse[i].location)
+        // var newDescription = $("<td>").html(jobResponse[i].description)
+        newRow.append(newTitle, newLocation, newCompany)
         $("#output").append(newRow)
 
 }
