@@ -53,9 +53,10 @@ body {
   color: goldenrod;
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: white;
-  font-size: 200px;
+  font-size: 2xs;
   margin-bottom: -20px;
   letter-spacing: -25px;
+  
 }
 
 .lead{
@@ -75,3 +76,4 @@ body {
 #searchResults{
   display: none;
 }
+
