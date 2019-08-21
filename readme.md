@@ -12,7 +12,7 @@ No installation necessary.
 
 ## Running Tests
 
-Submit a search. If you come across errors please reach out via the Contact option in the Menu dropdown. 
+Submit a search. If you come across errors please reach out via Github.
 
 ## Built With
 
@@ -25,7 +25,7 @@ Submit a search. If you come across errors please reach out via the Contact opti
 
 ## Contributing
 
-If you have feedback, please reach out via the Contact option in the Menu dropdown.
+If you have feedback, please reach out via Github.
 
 ## Versioning
 
