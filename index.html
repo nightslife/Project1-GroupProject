@@ -84,6 +84,7 @@
 
                 </div>
             </div>
+
            <!-- Search results -->
             <div id="searchResults" class="container">
                     <!-- 2 columns card -->
@@ -149,8 +150,6 @@
       </div>
       <div class="modal-body">
         <div class="container">
-
-          
             <div id = "locationModal">
               Location: 
               Raleigh
@@ -167,16 +166,11 @@
               Description: 
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </div>
-      
+            <div class="col" id="maps">
+        </div>
     </div>
     <br>
-      <div class="container" >
-          <img id = "maps" class="rounded mx-auto d-block" src="assets/images/background.jpg" style="width:600px;height:400px;">
       </div>
-
-
-      </div>
-
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
     </div>
@@ -186,27 +180,26 @@
 
 
 
-                            <button class="btn btn-secondary" type="button" id="test">
-                              Test
-                              </button>      
-                              <button class="btn btn-secondary" type="button" id="test2">
-                                Test2
-                                </button>      
+  <button class="btn btn-secondary" type="button" id="test">
+    Test
+    </button>      
+    <button class="btn btn-secondary" type="button" id="test2">
+      Test2
+      </button>      
 
         <!--Google apis and javascript link  -->
+        <script>
+          var map;
+          function initMap() {
+            map = new google.maps.Map(document.getElementById('maps'), {
+              center: {lat: 35.7985, lng: -78.6129},
+              zoom: 6
+            });
+          }
+      </script>
+
     <script type="text/javascript" src="assets/geocash.js"></script>
-
-
-    <script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDm478V9Zs2wCwgwQgxxokXaMs36PEFvYM&callback=initMap" async defer></script>
-<script>  var map;
-  function initMap() {
-    map = new google.maps.Map(document.getElementById('maps'), {
-      center: {lat: 35.7985, lng: -78.6129},
-      zoom: 8
-    });
-  }</script>
-
-
+  <script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDm478V9Zs2wCwgwQgxxokXaMs36PEFvYM&callback=initMap" async defer></script>
 
     </body>
 </html>

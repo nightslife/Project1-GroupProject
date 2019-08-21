@@ -76,10 +76,15 @@ body {
   display: none;
 }
 
+
 @media only screen  and (max-width: 840px){
   .display-4{
     font-size: 110px;
     letter-spacing: -13px;
   }
 }
+
+#maps{
+padding-top: 56.25%
+}  
 
