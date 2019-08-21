@@ -3,44 +3,13 @@ $(document).ready(function(){
 
   var funky = "AIzaSyDm478V9Zs2wCwgw,klsahdgldsaigh"
   var fresh = "asjkdhfkladshf;QgxxokXaMs36PEFvYM"
-  var latLong = ""
-  
-  //menu first page -open
-  function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-      document.getElementById("main").style.marginLeft = "250px";
-      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-    }
-   
-  //menu first page -close
-  function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-      document.getElementById("main").style.marginLeft= "0";
-      document.body.style.backgroundColor = "white";
-    }
   var searchInput = "developer"
   var locationInput = ""
   var address = []
   var searchResults = []
   var jobUrl = "https://github-jobs-proxy.appspot.com/positions?description=" + searchInput + "&location=" + locationInput
-  // var jobUrl = "https://github-jobs-proxy.appspot.com/positions?description=developer&location=san+francisco"
-  var resultComplete = false;
   
-  function results(){
-  searchInput = $("#articleCount option:selected").attr("id");
-  jobUrl = "https://github-jobs-proxy.appspot.com/positions?description=" + searchInput + "&location=" + locationInput
-  $.ajax({
-      url: jobUrl,
-      method: "GET"
-  }).then(function(resp){
-      console.log(resp)
-      searchResults = resp
-      address = resp[0].location.split(",")
-      console.log(address)
-      console.log(jobUrl)
-      return searchResults;
-  })
-  }
+
   
   // $("#test2").on("click",   })
   
@@ -72,7 +41,6 @@ $(document).ready(function(){
     console.log("moving")
     panTo()
   })
-  results()
   
   function searchResultsHide() {
     var x = document.getElementById("searchResults");
@@ -96,57 +64,82 @@ $(document).ready(function(){
     makeResultsTable(searchResults)
   }
   
+  function results(){
+    searchInput = $("#articleCount option:selected").attr("id");
+    jobUrl = "https://github-jobs-proxy.appspot.com/positions?description=" + searchInput + "&location=" + locationInput
+    $.ajax({
+        url: jobUrl,
+        method: "GET"
+    }).then(function(resp){
+        console.log(resp)
+        searchResults = resp
+        address = resp[0].location.split(",")
+        console.log(address)
+        console.log(jobUrl)
+        return searchResults;
+    }).then(function(searchResults){
+      makeResultsTable(searchResults)
+    })
+  }
+
   function makeResultsTable (jobResponse){
     $("#output").empty();
     for(let i = 0; i <=9 ; i++){
         var newRow = $("<tr>")
         newRow.attr("id", i)
-        newRow.addClass("rowtoclick") // add Class for CSS styling here)
+        // newRow.addClass("rowtoclick")
         newRow.attr("data-title", jobResponse[i].title)
         newRow.attr("data-company", jobResponse[i].company)
         newRow.attr("data-location", jobResponse[i].location)
         newRow.attr("data-description", jobResponse[i].description)
-        // newRow.attr("data-url", )
-        var newTitle = $("<td>").text(jobResponse[i].title)
-        var newCompany = $("<td>").text(jobResponse[i].company)
-        var newLocation = $("<td>").text(jobResponse[i].location)
+        newRow.attr("data-url", jobResponse[i].company_url)
+        var newTitle = $("<td>").text(jobResponse[i].title).addClass("rowtoclick")
+        var newCompany = $("<td>").text(jobResponse[i].company).addClass("rowtoclick")
+        var newLocation = $("<td>").text(jobResponse[i].location).addClass("rowtoclick")
+        var newWinLink = "https://www.numbeo.com/cost-of-living/in/" + jobResponse[i].location.split(",")[0].replace(/ /g, '-') + "?displayCurrency=USD";
         var thelink = $('<a>', {
-          text: "COL Info",
-          href: "https://www.numbeo.com/cost-of-living/in/" + jobResponse[i].location.split(",")[0].replace(/ /g, '-') + "?displayCurrency=USD",
+          text: jobResponse[i].location + " CoL Info",
+          title: newWinLink,
+          href: "#"
         })
-        var newURL = $("<td>").append(thelink)
+        newRow.attr("data-colUrl", newWinLink)
+        var newURL = $("<td>").append(thelink).addClass("colLink")
         newRow.append(newTitle, newLocation, newCompany, newURL)
         $("#output").append(newRow)
 }
   }
 
-  // $("#searchBtn").on("click",(searchResultsShow));
-
-
 $("#test").on("click", function(){
   console.log("moving")
   panTo()
 })
-results()
-
-
 
 $("#searchResults").hide();
 
 $("#searchBtn").on("click",function(){
-  $("#searchResults").show();
   results()
+  $("#searchResults").show();
 });
 
+$(document).on("click", ".colLink", function(){
+  window.open($(this).parent().attr("data-colUrl"))
+  })
+
+
+
 $(document).on("click", ".rowtoclick", function(){
+  var URL = $('<a>', {
+    text: "Company Website",
+    href: $(this).parent().attr("data-url")
+  })
   console.log("thats a row")
-  $("#jobTitleModal").text($(this).attr("data-title"))
-  $("#locationModal").text($(this).attr("data-location"))
-  $("#companyModal").text($(this).attr("data-company"))
-  $("#descriptionModal").html($(this).attr("data-description"))
-  $("#modal-footer").html($(this).attr("data-description"))
-  getLatLong($(this).attr("data-location"))
-  // $("#maps").text(this.attr("data-title"))
+  $("#jobTitleModal").text($(this).parent().attr("data-title"))
+  $("#locationModal").text("Location: " + $(this).parent().attr("data-location"))
+  $("#companyModal").text("Company: " + $(this).parent().attr("data-company"))
+  $("#companyURL").html(URL)
+  $("#descriptionModal").html($(this).parent().attr("data-description"))
+  // $("#modal-footer").html($(this).parent().attr("data-description"))
+  getLatLong($(this).parent().attr("data-location"))
   console.log("clicked")
   $("#modal").modal("show");
 });
