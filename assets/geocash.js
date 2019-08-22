@@ -92,42 +92,30 @@ $(document).ready(function(){
     }
   }
 
-function nextPage(){
-  curPage = curPage + 10
-  results()
-  $("#prevPage").show()
-  if(curPage > 39){
-    $("#nextPage").hide()
+//Function: Displays the next ten results of the search
+  function nextPage(){
+    curPage = curPage + 10
+    results()
+    $("#prevPage").show()
+    if(curPage > 39){
+      $("#nextPage").hide()
+    }
   }
-}
 
-function prevPage(){
-  curPage = curPage - 10
-  results()
-  $("#nextPage").show()
-  if(curPage < 1){
-    $("#prevPage").hide()
+//Function: Displays the previous ten results of the search
+  function prevPage(){
+    curPage = curPage - 10
+    results()
+    $("#nextPage").show()
+    if(curPage < 1){
+      $("#prevPage").hide()
+    }
   }
-}
 
 
 //============================================
 //==========End of Function list==============
 //============================================
-
-$("#nextPage").on("click",function(e){
-  nextPage()
-  $("#searchResults").show();
-  $('html, body').animate({'scrollTop':'400'});
-  e.preventDefault();
-});
-
-$("#prevPage").on("click",function(e){
-  prevPage()
-  $("#searchResults").show();
-  $('html, body').animate({'scrollTop':'400'});
-  e.preventDefault();
-});
 
 // On click event to for search button to query GitHub Jobs API
   $("#searchBtn").on("click",function(){
@@ -163,6 +151,22 @@ $("#prevPage").on("click",function(e){
 
   // Show the modal
       $("#modal").modal("show");
+  });
+
+// On click event to display next 10 results and reset view
+  $("#nextPage").on("click",function(e){
+    nextPage()
+    $("#searchResults").show();
+    $('html, body').animate({'scrollTop':'400'});
+    e.preventDefault();
+  });
+
+// On click event to display previous 10 results and reset view
+  $("#prevPage").on("click",function(e){
+    prevPage()
+    $("#searchResults").show();
+    $('html, body').animate({'scrollTop':'400'});
+    e.preventDefault();
   });
 
 });
