@@ -31,20 +31,17 @@ body {
   background-size: cover;
 }
 
-.btn{
-    
-    margin-top: 35px;
+.btn-md{
     text-align: center;
     background-color: green;
     border: green;
     color: white;
-    
+    border-radius: 4px;
 }
 
 #searchBtn {
-  height: 50px;
-  margin-top: 27px;
-
+  height: 48px;
+  margin-top: 29px;
 }
 
 
@@ -73,6 +70,10 @@ body {
   }
 
 #searchResults{
+  display: none;
+}
+
+#prevPage{
   display: none;
 }
 
