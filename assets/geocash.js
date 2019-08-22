@@ -3,6 +3,7 @@ $(document).ready(function(){
   var funky = "AIzaSyDm478V9Zs2wCwgw,klsahdgldsaigh";
   var fresh = "asjkdhfkladshf;QgxxokXaMs36PEFvYM";
   var searchResults = []
+  var curPage = 0
 //--------------------------------------------------
 
 
@@ -59,7 +60,7 @@ $(document).ready(function(){
     $("#output").empty();
 
     //Iterate through results for the table
-    for(let i = 0; i <=9 ; i++){
+    for(let i = curPage; i <= curPage + 9 ; i++){
 
     //Make a new row for each returned result with attributes based on result information
       var newRow = $("<tr>")
@@ -91,11 +92,42 @@ $(document).ready(function(){
     }
   }
 
+function nextPage(){
+  curPage = curPage + 10
+  results()
+  $("#prevPage").show()
+  if(curPage > 39){
+    $("#nextPage").hide()
+  }
+}
+
+function prevPage(){
+  curPage = curPage - 10
+  results()
+  $("#nextPage").show()
+  if(curPage < 1){
+    $("#prevPage").hide()
+  }
+}
+
 
 //============================================
 //==========End of Function list==============
 //============================================
 
+$("#nextPage").on("click",function(e){
+  nextPage()
+  $("#searchResults").show();
+  $('html, body').animate({'scrollTop':'400'});
+  e.preventDefault();
+});
+
+$("#prevPage").on("click",function(e){
+  prevPage()
+  $("#searchResults").show();
+  $('html, body').animate({'scrollTop':'400'});
+  e.preventDefault();
+});
 
 // On click event to for search button to query GitHub Jobs API
   $("#searchBtn").on("click",function(){
