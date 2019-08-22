@@ -19,181 +19,157 @@
     <link rel="stylesheet" href="assets/style.css">
     <title>GeoCa$h</title>
 
-</head>
+  </head>
 
-    <body>
+  <body>
         
-        <div class="container-fluid">
+    <div class="container-fluid">
               
-
-<!-- basic dropdown button -->
-<div class="dropdown" > 
-  <a href="#" class="btn btn-link dropdown-toggle text-light" tabindex="0">
-   Menu <i class="dd-icon"></i>
-  </a>
-  <!-- menu component -->
-  <ul class="menu bg-gray">
-    <li class="menu-item">
-      <a href="#">
-        <i class=" icon-link"></i> Home
-      </a>
-      <a href="#">
-          <i class=" icon-link"></i>Profile
+      <!-- basic dropdown button -->
+      <div class="dropdown" > 
+        <a href="#" class="btn btn-link dropdown-toggle text-light" tabindex="0">
+          Menu <i class="dd-icon"></i>
         </a>
-        <a href="#">
-            <i class="  icon-link"></i>About
-          </a>
-    </li>
+        <!-- menu component -->
+        <ul class="menu bg-gray">
+          <li class="menu-item">
+            <a href="#">
+              <i class=" icon-link"></i> Home
+            </a>
+            <a href="#">
+              <i class=" icon-link"></i>Profile
+            </a>
+            <a href="#">
+              <i class="  icon-link"></i>About
+            </a>
+          </li>
+        </ul>
+      </div>
 
-  </ul>
-</div>
-
-<!-- Logo -->
-
-            <div>
-                <h1 class="display-4">
-                    <span style="color:goldenrod">G</span>
-                    <span style="color:goldenrod">E</span>
-                    <span style="color:goldenrod">O</span>
-                    <span style="color:goldenrod">C</span>
-                    <span style="color:goldenrod">A</span>
-                    <span style="color: #28a745">$</span>
-                    <span style="color:goldenrod">H</span>
-                </h1>
-                <p class="lead">Helps you decide if it is a good move or not</p>
-                  
+      <!-- Logo -->
+      <div>
+        <h1 class="display-4">
+          <span style="color:goldenrod">G</span>
+          <span style="color:goldenrod">E</span>
+          <span style="color:goldenrod">O</span>
+          <span style="color:goldenrod">C</span>
+          <span style="color:goldenrod">A</span>
+          <span style="color: #28a745">$</span>
+          <span style="color:goldenrod">H</span>
+        </h1>
+        <p class="lead">Helps you decide if it is a good move or not</p>
+      </div>
+      
+      <!-- Search div -->
+      <div class="container text-center">
+        <div class="row">
+          <!-- 2 columns: one for menu, one for search -->
+          <div class="col-md">
+            <div class="form-group">
+              <label for="exampleFormControlSelect1"></label>
+              <select class="form-control" id="articleCount">
+                <option id = "developer">All</option>
+                <option id = "full+Stack">Full Stack</option>
+                <option id = "data">Data</option>
+                <option id = "web">Web</option>
+                <option id = "mobile">Mobile</option>
+              </select>
             </div>
-                
-            <div class="container text-center" >
-                <div class="row">
-                    <!-- 2 columns: one for menu, one for search -->
-                    <div class="col-md">
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect1"></label>
-                            <select class="form-control" id="articleCount">
-                                <option id = "developer">All</option>
-                                <option id = "full+Stack">Full Stack</option>
-                                <option id = "data">Data</option>
-                                <option id = "web">Web</option>
-                                <option id = "mobile">Mobile</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md">
-                        <input id="searchBtn" class="btn btn-success btn-lg btn-block" type="submit" value="Search">
-                    </div>
+          </div>
+          <div class="col-md">
+            <input id="searchBtn" class="btn btn-success btn-lg btn-block" type="submit" value="Search">
+          </div>
+        </div>
+      </div>
+    </div>
 
-                </div>
+    <!-- Search results -->
+    <div id="searchResults" class="container">
+      
+      <!-- 2 columns card -->
+      <div class="card">
+        <div class="card-header">
+          <h5>Search Results</h5>
+        </div>
+        <div class="card-block">
+          <div class="row">
+            <div class="col-lg-12 tags p-b-2">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col" id="jobTitle">Title</th>
+                    <th scope="col" id="location" i>Location</th>
+                    <th scope="col" id="company" i>Company</th>
+                    <th scope="col" id="website" i>Cost of Living</th>
+                  </tr>
+                </thead>
+                <tbody id="output">
+                  <tr class = rowtoclick>
+                      <td>Searching...</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-           <!-- Search results -->
-            <div id="searchResults" class="container">
-                    <!-- 2 columns card -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h5>Search Results</h5>
-                        </div>
-                        <div class="card-block">
-                            <div class="row">
-                                <div class="col-lg-12 tags p-b-2">
-                                        <table class="table table-hover">
-                                                <thead>
-                                                  <tr>
-                                                    <th scope="col" id="jobTitle">Title</th>
-                                                    <th scope="col" id="location" i>Location</th>
-                                                    <th scope="col" id="company" i>Company</th>
-                                                    <th scope="col" id="website" i>Cost of Living</th>
-                                                    
-                                                  </tr>
-                                                </thead>
-                                                <tbody id="output">
-                                                  <tr class = rowtoclick>
-                                                    <td>Sweet Ass Jobs on the Way!</td>
-                                                  </tr>
-
-                                                </tbody>
-                                              </table>
-                                </div>
-
-
-                         
-                        </div>
-                        <!--/card-block-->
-                    </div>
-                    <!-- /2 columns card -->
-                </div>
-
-
-<!-- Modal -->
+    <!-- Modal -->
     <div id = "modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel exampleModalScrollableTitle" aria-hidden="true">
       <div class="modal-dialog modal-lg modal-dialog-scrollable">  
         <div class="modal-content">
           <div class="modal-header">
             <h5 id="jobTitleModal"class="modal-title" >
-              Job Tittle: Job XYZ
+
             </h5>
-        <button type="button" class="close" id="modalBtn" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="container">
-            <div id = "locationModal">
-              Location: 
-              Raleigh
-            </div>
-            <br>
+            <button type="button" class="close" id="modalBtn" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div id = "locationModal">
 
-            <div id = "companyModal">
-              Company Name: 
-              CompanyXYZ
-            </div>
-            <br>
-
-            <div id = "companyURL">
-                Company Name: 
-                CompanyXYZ
               </div>
               <br>
+              <div id = "companyModal">
+                
+              </div>
+              <br>
+              <div id = "companyURL">
+                
+              </div>
+              <br>
+              <div id = "descriptionModal">
+                
+              </div>
+              <div class="col" id="maps">
 
-            <div id = "descriptionModal">
-              Description: 
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </div>
             </div>
-            <div class="col" id="maps">
+            <br>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
         </div>
-    </div>
-    <br>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    </div>
-    </div>
-  </div>
-</div>        
-
-
-
-  <button class="btn btn-secondary" type="button" id="test">
-    Test
-    </button>      
-    <button class="btn btn-secondary" type="button" id="test2">
-      Test2
-      </button>      
-
-        <!--Google apis and javascript link  -->
-        <script>
-          var map;
-          function initMap() {
-            map = new google.maps.Map(document.getElementById('maps'), {
-              center: {lat: 35.7985, lng: -78.6129},
-              zoom: 6
-            });
-          }
-      </script>
+    </div>        
+    
+    <!--Google apis and javascript link  -->
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('maps'), {
+        center: {lat: 35.7985, lng: -78.6129},
+         zoom: 6
+        });
+      }
+    </script>
 
     <script type="text/javascript" src="assets/geocash.js"></script>
-  <script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDm478V9Zs2wCwgwQgxxokXaMs36PEFvYM&callback=initMap" async defer></script>
+    <script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDm478V9Zs2wCwgwQgxxokXaMs36PEFvYM&callback=initMap" async defer></script>
 
-    </body>
+  </body>
 </html>
